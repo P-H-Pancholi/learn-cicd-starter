@@ -20,3 +20,6 @@ jobs:
     
       - name: Build app
         run: ./scripts/buildprod.sh
+      
+      - name: Push to google cloud
+        run: gcloud builds submit --tag us-central1-docker.pkg.dev/bright-sunlight-459114-j3/notely-ar-repo/notely:latest .
