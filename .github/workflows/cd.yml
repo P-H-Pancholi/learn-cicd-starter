@@ -31,3 +31,6 @@ jobs:
       
       - name: Push to google cloud
         run: gcloud builds submit --tag us-central1-docker.pkg.dev/bright-sunlight-459114-j3/notely-ar-repo/notely:latest .
+
+      - name: Deploy to Cloud Run
+        run: gcloud run deploy notely --image us-central1-docker.pkg.dev/bright-sunlight-459114-j3/notely-ar-repo/notely:latest --region us-central1 --allow-unauthenticated --project bright-sunlight-459114-j3 --max-instances=4
